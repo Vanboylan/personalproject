@@ -1,7 +1,8 @@
 class User {
-  constructor() {
-    this.username = "";
-    this.email = "";
-    this.applications = {};
+  constructor(name, email) {
+    this.name = "Harrison Bailey";
+    this.email = "hbailey@gmail.com";
   }
 }
+
+module.exports = User;

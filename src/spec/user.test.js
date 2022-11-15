@@ -1,4 +1,4 @@
-const User = require("./User");
+const User = require("../User");
 
 describe("User", () => {
   it("constructs a new user", () => {

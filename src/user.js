@@ -1,7 +1,7 @@
 class User {
   constructor(name, email) {
-    this.name = "Harrison Bailey";
-    this.email = "hbailey@gmail.com";
+    this.name = name;
+    this.email = email;
   }
 }
 

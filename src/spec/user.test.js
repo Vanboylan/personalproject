@@ -11,4 +11,8 @@ describe("User", () => {
     expect(testUser.name).toEqual("Mick Michaels");
     expect(testUser.email).toEqual("mmichaels@gmail.com");
   });
+  it("constructs a new user with applications", () => {
+    const testUser = new User("Mick Michaels", "mmichaels@gmail.com");
+    expect(testUser.applications).toEqual([]);
+  });
 });

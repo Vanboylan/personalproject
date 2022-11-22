@@ -35,6 +35,31 @@ const ApplicationsController = {
       res.status(201).redirect(req.get("referer"));
     });
   },
+  View: (req, res) => {
+    const application = Application.findById(req.params.id);
+    res
+      .render("/:id", {
+        application: application,
+      })
+      .populate("user")
+      .populate("company")
+      .populate("website")
+      .populate("result")
+      .populate("comments")
+      .populate("timestamps");
+  },
+  Update: (req, res) => {
+    const application = Application.findById(req.params.id);
+    application.company = req.body.company;
+    application.website = req.body.website;
+    application.result = req.body.result;
+    application.comments = req.body.comments;
+    application.save((err) => {
+      if (err) {
+        throw err;
+      }
+    });
+  },
   Delete: (req, res) => {
     const applicationID = req.params.id;
     Application.findByIdAndDelete(id, (err) => {

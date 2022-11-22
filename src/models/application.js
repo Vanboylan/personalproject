@@ -16,6 +16,9 @@ const ApplicationSchema = new mongoose.Schema(
     comments: {
       type: String,
     },
+    user: {
+      type: ObjectId,
+    },
   },
   { timestamps: true }
 );
